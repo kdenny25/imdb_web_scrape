@@ -1,0 +1,5 @@
+# HTTP requests library
+requests
+
+# Beautiful Soup Webscrape library
+beautifulsoup4
