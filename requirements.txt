@@ -3,3 +3,6 @@ requests
 
 # Beautiful Soup Webscrape library
 beautifulsoup4
+
+# pandas organize in tabular form
+pandas
