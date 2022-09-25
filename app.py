@@ -6,6 +6,9 @@ import pandas as pd
 page = requests.get\
     ('https://www.imdb.com/list/ls084908369/?sort=list_order,asc&st_dt=&mode=detail&page=1&ref_=ttls_vm_dtl')
 
+url  = 'https://www.imdb.com/find?q='
+
+
 # parse the HTML
 soup = BeautifulSoup(page.content, 'html.parser')
 
