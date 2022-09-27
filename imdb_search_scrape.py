@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import re
 
 # GET request for scraping page
 
@@ -8,17 +9,31 @@ import pandas as pd
 url_base  = 'https://www.imdb.com/find?q='
 
 df = pd.read_csv('./data/disney_plus_release_schedule.csv')
-search_list = df[df['title']]
+search_list = df['title']
 
+# takes list of movies and formats them to be
+# easily read by imdb's search
+def cleanSearch(list):
+    newList = []
+    for i in list:
+        new_text = re.sub("[\(\[].*?[\)\]]", "", i)
+        new_text = new_text.replace(" ", "+")
+        newList.append(new_text)
+    return newList
 
-for i, title in enumerate(search_list):
+clean_search = cleanSearch(search_list)
+
+page = requests.get(url_base + clean_search[1])
+
+soup = BeautifulSoup(page.content, 'html.parser')
+
+for i, title in enumerate(clean_search):
     # GET request for search results
-    page = requests.get(url_base + title)
-
+    #page = requests.get(url_base + title)
+    print(title)
     # parse HTML page to search for link
-    soup = BeautifulSoup(page.content, 'html.parser')
-    soup.fin('a', href=True)
-
+    #soup = BeautifulSoup(page.content, 'html.parser')
+    #soup.fin('a', href=True)
 
 
 
