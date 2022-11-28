@@ -3,11 +3,10 @@
 This is just a simple script to pull data of Disney movies between 2021 and 2022
 from a pre-created list on IMDB.  
 
-The initial code just pulled a list of movies from a user created list. 
-This was not adequate for the analysis I want to conduct. So I found a 
-prebuilt list from the link below. 
-
-https://www.finder.com/disney-plus-movie-tv-release-schedule 
+Originally I had a pre-created list of disney titles but for reproducibility 
+scrape_disney_titles.py was created to generate the list of titles. In this 
+file contains a function 'list_disney_releases' requiring the input of a range of years.
+The result is a dataframe containing the Title, Year of Release and the IMDB url tail.
 
 At the time of writing this script the dataset was missing full release dates
 But, having additional information about the films could have a positive

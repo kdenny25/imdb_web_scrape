@@ -6,3 +6,8 @@ beautifulsoup4
 
 # pandas organize in tabular form
 pandas
+
+# syntax formatting
+black
+flake8
+
