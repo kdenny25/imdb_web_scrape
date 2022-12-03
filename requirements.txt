@@ -11,3 +11,9 @@ pandas
 black
 flake8
 
+#yahoo finance api
+yfinance
+
+# more robust webscrape library
+selenium
+
